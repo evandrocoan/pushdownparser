@@ -196,3 +196,17 @@ For anything else, I can be reached by email at erezshin at gmail com.
  -- [Erez](https://github.com/erezsh)
 
 
+## Sublime Text Dependency
+
+To use this as a Package Control Dependency https://packagecontrol.io/docs/dependencies create
+this `dependencies.json` file on the root of your Package:
+```json
+{
+    "*": {
+        "*": [
+            "debugtools",
+            "pushdownparser"
+        ]
+    }
+}
+```

@@ -1,0 +1,17 @@
+
+import os
+import sys
+
+CURRENT_PACKAGE_NAME       = "pushdownparser"
+CURRENT_PACKAGE_FILE       = os.path.dirname( os.path.realpath( __file__ ) )
+PACKAGE_ROOT_DIRECTORY     = CURRENT_PACKAGE_FILE.replace( ".sublime-package", "" )
+SUBLIME_PACKAGES_DIRECTORY = os.path.join( os.path.dirname( os.path.dirname( PACKAGE_ROOT_DIRECTORY ) ), "Packages" )
+
+def assert_path(*args):
+    module = os.path.realpath( os.path.join( *args ) )
+    if module not in sys.path:
+        sys.path.append( module )
+
+# Import the dependency
+assert_path( SUBLIME_PACKAGES_DIRECTORY, CURRENT_PACKAGE_NAME, 'source' )
+
