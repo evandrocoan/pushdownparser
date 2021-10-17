@@ -4,11 +4,14 @@ except ImportError:
     import re
 from setuptools import find_packages, setup
 
-__version__ ,= re.findall('__version__: str = "(.*)"', open('lark/__init__.py').read())
+__version__ ,= re.findall('__version__: str = "(.*)"', open('source/lark/__init__.py').read())
 
 setup(
     name = "lark",
     version = __version__,
+    package_dir = {
+        '': 'source'
+    },
     packages = ['lark', 'lark.parsers', 'lark.tools', 'lark.grammars', 'lark.__pyinstaller'],
 
     requires = [],
